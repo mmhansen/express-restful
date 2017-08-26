@@ -1,0 +1,14 @@
+{
+  "name": "express-restful",
+  "version": "1.0.0",
+  "description": "An extension to express for building REST APIs with minimal setup.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Hansen <hansen.mmb@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
