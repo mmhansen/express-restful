@@ -7,6 +7,21 @@ class Resource {
   }
 }
 
+
+function requestWapper(func) {
+  return function (req, res, next) {
+    req.next = next
+    let code = 200
+    let reply = func(req)
+    if (Array.isArray(reply)) {
+      code = reply[1]
+      reply = reply[0]
+    }
+    res.status(code)
+    res.send(reply)
+  }
+}
+
 class Api {
   constructor(app) {
     this.app = app;
@@ -20,8 +35,9 @@ class Api {
     const methods = t.filter(function (s) {
       return allowed.indexOf(s) > -1
     })
+
     methods.map(function (method) {
-      self.app[method](url, resource.prototype[method])
+      self.app[method](url, requestWapper(resource.prototype[method]))
     })
   }
 }

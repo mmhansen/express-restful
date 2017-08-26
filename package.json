@@ -4,11 +4,15 @@
   "description": "An extension to express for building REST APIs with minimal setup.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/test.js"
   },
   "author": "Michael Hansen <hansen.mmb@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
